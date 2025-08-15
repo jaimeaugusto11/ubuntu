@@ -18,18 +18,8 @@ import { currency } from "@/utils/currency";
 
 type ModalKey = null | "quote" | "chat" | "pay" | "track" | "rate" | "complain" | "provider";
 
-export default function ServicosPage({ isAuthenticated = true }: { isAuthenticated?: boolean }) {
-  if (!isAuthenticated) {
-    return (
-      <div className="w-screen min-h-screen grid place-items-center bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="text-center">
-          <h1 className="text-xl font-semibold text-gray-800">Acesso restrito</h1>
-          <p className="text-gray-600">Esta página só está disponível para utilizadores autenticados.</p>
-        </div>
-      </div>
-    );
-  }
-
+export default function ServicosPage() {
+  
   const [q, setQ] = useState("");
   const [city, setCity] = useState("Todas");
   const [minRating, setMinRating] = useState(0);
@@ -47,7 +37,7 @@ export default function ServicosPage({ isAuthenticated = true }: { isAuthenticat
     return SERVICES.filter((s) => {
       const prov = providersById.get(s.providerId)!;
       const text = q.trim().toLowerCase();
-      const matchText = !text || s.title.toLowerCase().includes(text) || prov.name.toLowerCase().includes(text) || prov.specialties.some(sp => sp.toLowerCase().includes(text));
+      const matchText = !text || s.title.toLowerCase().includes(text) || prov.name.toLowerCase().includes(text) || prov.specialties.some((sp: string) => sp.toLowerCase().includes(text));
       const matchCity = city === "Todas" || prov.city === city;
       const matchRating = prov.rating >= minRating;
       const matchTag = tag === "Todos" || s.tags.includes(tag.toLowerCase());
@@ -68,7 +58,7 @@ export default function ServicosPage({ isAuthenticated = true }: { isAuthenticat
 
   return (
     <div className="w-screen min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="px-4 sm:px-6 lg:px-8 py-8">
+      <div className="px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900">Encontre o serviço ideal</h1>
           <button onClick={() => setSortAsc((s) => !s)} className="inline-flex items-center gap-2 border border-gray-300 bg-white/80 px-4 py-2 rounded-xl shadow-sm hover:shadow-md hover:bg-white transition">
