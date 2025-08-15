@@ -42,7 +42,7 @@ export default function TabelaServico() {
       headerName: 'Ações',
       cellRenderer: (params: ICellRendererParams<IRow>) => (
         <button
-          onClick={() => visualizarServico(params.data)}
+          onClick={() => visualizarServico(params.data!)}
           className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded flex items-center gap-1"
         >
           <Eye size={16} />
