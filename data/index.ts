@@ -1,7 +1,7 @@
 // ================================
 // data/index.ts
 // ================================
-import type { Provider, Service } from "../types";
+import type { Provider, Service } from "../components/portofolio/types";
 
 export const PROVIDERS: Provider[] = [
   { id: "p1", name: "Studio Clean", rating: 4.8, reviews: 312, city: "Luanda", distanceKm: 3.2, priceFrom: 3500, specialties: ["Limpeza residencial", "Pós-obra"], portfolio: [{ title: "Apartamento T2", img: "" }, { title: "Escritório 120m²", img: "" }] },
