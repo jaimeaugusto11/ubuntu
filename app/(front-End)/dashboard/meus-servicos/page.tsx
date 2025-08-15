@@ -1,12 +1,20 @@
-import { Table } from '@/components/ui/table'
+
+import TabelaSerico from '@/components/servicos/tableServico'
 import React from 'react'
 
+
 export default function page() {
+
+  
   return (
     <main className='p-5'>
-      Esta é a pagina dos serviços
+     
 
-      <Table/>
+     <div>
+        <TabelaSerico/>
+     </div>
+
+     
     </main>
   )
 }

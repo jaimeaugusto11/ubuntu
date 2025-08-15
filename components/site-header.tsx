@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 
 const pageTitles: Record<string, string> = {
-  "/dashboard": "Dashboard",
+  "/dashboard": "Buscar Serviços",
   "/dashboard/orcamentos": "Orçamento",
   "/dashboard/prestador": "Prestador",
   "/dashboard/servicos": "Serviçoes",
@@ -37,7 +37,7 @@ export function SiteHeader() {
               target="_blank"
               className="dark:text-foreground"
             >
-              GitHub
+              Jaime André
             </a>
           </Button>
         </div>
